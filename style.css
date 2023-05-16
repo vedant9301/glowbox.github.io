@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0%;
+    box-sizing: border-box;
+    font-size: 60px;
+
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(39, 48, 49);
+    perspective: 20em;
+    perspective-origin: 77px 100px;
+    position: relative;
+}
+
+.cube {
+   
+    transform-style: preserve-3d;
+    animation: rosh 3s linear infinite ;
+}
+
+@keyframes rosh 
+{
+    0%
+    {
+      transform: rotateX(-30deg) rotateY(0deg);
+    }
+    100%
+    {
+        transform: rotateX(-30deg) rotateY(360deg);
+    }
+    
+}
+
+
+.shadow{
+    position: absolute;
+    background:rgb(0, 89, 255);
+    width: 2em;
+    height: 2em;
+    transform: rotateX(90deg);
+    bottom: 6em;
+    left: 13em;
+    box-shadow: 0 120px 100px 10px rgb(39, 2, 252), 
+                0 120px 200px 10px aqua;
+    filter: blur(100px);
+ 
+}
+
+.top,
+.bottom,
+.left,
+.right,
+.front,
+.back {
+    height: 2em;
+    width: 2em;
+    background-color: aqua;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    box-shadow: 0 0 50px 10px blue inset ,
+               0 0 0 2EM aqua inset ;
+
+}
+
+.front {
+    transform: translateZ(1em);
+}
+
+.back {
+    transform: translateZ(-1em);
+}
+
+.top {
+    transform: translatey(-1em) rotateX(90deg);
+}
+
+.bottom {
+    transform: translatey(1em) rotateX(90deg);
+}
+
+.right {
+    transform: translateX(1em) rotateY(90deg);
+}
+
+.left {
+    transform: translateX(-1em) rotateY(90deg);
+}
